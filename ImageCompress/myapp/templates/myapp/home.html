@@ -1,0 +1,26 @@
+{% extends "myapp/base.html" %}
+
+{% block csrftoken %}
+    <meta name="csrf-token" content="{{ csrf_token }}">
+{% endblock csrftoken %}
+
+{% block start %}
+<div class="container">
+        <div class="card">
+        <h3>Upload Files</h3>
+       
+        <div class="drop_box">
+            <header>
+            <h4>Select File here</h4>
+            </header>
+            <p>Files Supported: JPEG, PNG, JPG </p>
+            <input type="file" id="fileID" style="display:none;">
+            <button class="btn">Choose File</button>
+            <p class="message" id="msg"></p>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock start %}
