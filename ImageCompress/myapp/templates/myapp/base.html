@@ -6,14 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Compresser</title>
     <link rel="stylesheet" href="{% static "css/main_style.css" %}"/>
-
+    <link rel="stylesheet" href="{% static "css/notification_style.css" %}"/>
     {% block csrftoken %}{% endblock csrftoken %}
 </head>
 <body>
+    {% comment %} for notification {% endcomment %}
+    {% if messages %}
+        <div class="notification show" id="notification" >
+            <ul class="messages" id="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            <button class="close-btn" id="close-btn">&times;</button>
+        </div>
+    {% endif %}
+    
     {% block start %}
 
     {% endblock start %}
 
     <script src="{% static "javascript/main_script.js" %}"></script>
+    <script src="{% static "javascript/notification_script.js" %}"></script>
 </body>
 </html>

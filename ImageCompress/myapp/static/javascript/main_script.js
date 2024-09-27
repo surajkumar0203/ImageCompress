@@ -1,11 +1,24 @@
-const btn=document.querySelector('button')
+const btn=document.querySelector('#filebutton')
 const input = document.querySelector("input");
 const drop_box=document.querySelector(".drop_box")
+// redirect
+const download_btn=document.querySelector('#download-btn')
 
-btn.addEventListener('click',(e)=>{
-    input.click()
-    
-})
+// when btn avaible
+if(btn){
+    btn.addEventListener('click',()=>{
+        input.click()
+    })
+}
+// when download_btn avaible
+if(download_btn){
+    download_btn.addEventListener('click',()=>{
+        setTimeout(()=>{
+            window.location.href=`/`
+        },2000)
+    })
+}
+
 
 input.addEventListener('change',(e)=>{
     const filename=e.target.files[0].name
@@ -37,5 +50,4 @@ input.addEventListener('change',(e)=>{
         hiddenImageInput.files = dataTransfer.files;
     }
 })
-
 

@@ -15,7 +15,11 @@
             </header>
             <p>Files Supported: JPEG, PNG, JPG </p>
             <input type="file" id="fileID" style="display:none;">
-            <button class="btn">Choose File</button>
+            {% if isDownload %}
+                <a href="{% url "download" %}" class="btn" id="download-btn">Download</a>
+            {% else %}
+                <button class="btn" id="filebutton">Choose File</button>
+            {% endif %}
             <p class="message" id="msg"></p>
         </div>
     </div>

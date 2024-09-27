@@ -20,7 +20,7 @@
   border-radius: 10px;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
   width: 600px;
-  height: 330px;
+  height: 350px;
   background-color: #ffffff;
   padding: 10px 30px 40px;
 }
@@ -63,6 +63,7 @@
   border: none;
   outline: none;
   transition: 0.3s;
+  margin-top: 10px;
 }
 
 .btn:hover{
